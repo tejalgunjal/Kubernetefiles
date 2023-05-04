@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: mylbservice
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: development
+
+18)myNapiVersion: v1
+
+kind: Service
+metadata:
+   name: mynodeportservice
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  selector:
+      app: developmentodePortService
