@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+     name: myngpod
+spec:
+  replicas: 5
+  selector:
+      matchLabels:
+        app: development
+  template:
+    metadata:
+       labels:
+         app: development
+    spec:
+     containers:
+           - image: nginx
+             name: ngcontainer
+             ports:
+               - containerPort: 80
+             volumeMounts:
+               - name: html
+                 mountPath: /usr/share/nginx/html
+     volumes:
+       - name: html
+         persistentVolumeClaim:
+             claimName: mypvc
