@@ -17,4 +17,4 @@ volumes:
     - name: htmlfolder
       emptyDir: 
 
-         medium: memory
+         medium: Memory
