@@ -15,4 +15,6 @@ spec:
                  mountPath: /usr/share/nginx/html
 volumes:
     - name: htmlfolder
-      emptyDir: {}
+      emptyDir: 
+
+         medium: memory
